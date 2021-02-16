@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { SignUpScreen } from '..';
 import "./styles/LoginScreen.css";
 
@@ -8,7 +9,9 @@ const LoginScreen = () => {
     return (
         <div className="login">
             <div className="login__bg">
-                <img src="/images/logo.svg" alt="Netflix Logo" className="login__logo" />
+                <Link to="/">
+                    <img src="/images/logo.svg" alt="Netflix Logo" className="login__logo" />
+                </Link>
                 <button onClick={() => setSignIn(true)} className="login__button">Sign In</button>
 
                 <div className="login__gradient" />
@@ -16,7 +19,7 @@ const LoginScreen = () => {
 
             <div className="login__body">
                 {signIn ? (
-                    <SignUpScreen />
+                    <SignUpScreen setSignIn={setSignIn} />
                 ) : (
                         <>
                             <h1>Unlimited movies, TV shows, and more.</h1>
