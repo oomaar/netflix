@@ -54,8 +54,8 @@ const Row = ({ title, fetchUrl, isLargeRow = false }) => {
                                 src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path}`}
                                 alt={movie.name}
                             />
-                            <h1 className="row__posterTitle">{truncate(movie.title, 20)}</h1>
-                            <p className="row__posterYear">({movie.release_date})</p>
+                            {!isLargeRow && <h1 className="row__posterTitle">{truncate(movie.title, 20)}</h1>}
+                            {!isLargeRow && <p className="row__posterYear">({movie.release_date})</p>}
                         </div>
                     )))}
             </div>
