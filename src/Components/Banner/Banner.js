@@ -1,38 +1,37 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import "./styles/Banner.css";
+import axios from "../../helpers/axios";
+import requests from "../../helpers/requests";
 
 const Banner = () => {
+    const [movie, setMovie] = useState([]);
+    
+    useEffect(() => {
+        async function fetchData() {
+            const request = await axios.get(requests.fetchNetflixOriginals);
+            setMovie(request.data.results[
+                Math.floor(Math.random() * request.data.results.length - 1)
+            ]);
+        }
+
+        fetchData();
+    }, []);
+
     const truncate = (string, n) => string?.length > n ? string.substr(0, n - 1) + '...' : string;
     
     return (
         <header className="banner" style={{
-            background: `url('/images/misc/homebg.jpg')`,
-            backgroundSize: "cover",
+            background: `url('https://image.tmdb.org/t/p/original/${movie ?. backdrop_path}')`,
             backgroundPosition: "center center"
-        }}>
+        }} >
+            {/* <img className="banner" src={`https://image.tmdb.org/t/p/original/${movie ?. backdrop_path}`} alt=""/> */}
             <div className="banner__container">
-                <h1 className="banner__title">MovieName</h1>
+                <h1 className="banner__title">{movie?.title || movie?.name || movie?.original_name}</h1>
                 <div className="banner__buttons">
                     <button className="banner_button">Play</button>
                     <button className="banner_button">My List</button>
                 </div>
-                <h1 className="banner__description">This is a test Description
-                {truncate(`This is a test DescriptionThis is a test DescriptionThis is a test Desc
-                ription
-                This is a test DescriptionThis is a test DescriptionThis is a test D
-                escriptionT
-                his is a test DescriptionThis is a test DescriptionThis is a test Descripti
-                onThis is
-                a test DescriptionThis is a test DescriptionThis is a test DescriptionThis is
-                a test
-                DescriptionThis is a test DescriptionThis is a test DescriptionThis is a test D
-                escriptio
-                nThis is a test DescriptionThis is a test DescriptionThis is a test Description
-                This is a te
-                st DescriptionThis is a test DescriptionThis is a test DescriptionThis is a test
-                DescriptionThi
-                s is a test DescriptionThis is a test DescriptionThis is a test Description
-                This is a test Description`, 150)}</h1>
+                <h1 className="banner__description">{truncate(movie?.overview, 150)}</h1>
             </div>
 
             <div className="banner--fadeBottom" />
@@ -41,3 +40,5 @@ const Banner = () => {
 };
 
 export default Banner;
+
+
