@@ -26,7 +26,8 @@ const Navbar = () => {
                     <p>My List</p>
                 </div>
 
-                <img className="navbar__burgerButton" src="/images/icons/burger.png" alt="responsive button"/>
+
+                <img className="navbar__burgerButton" src="/images/icons/burger.png" alt="responsive button" />
                 <div className="navbar__burgerLinks">
                     <p>Home</p>
                     <p>Series</p>
@@ -35,7 +36,13 @@ const Navbar = () => {
                     <p>My List</p>
                 </div>
 
-                <img className="navbar__avatar" src="/images/users/4.png" alt="User Avatar" />
+                <div className="navbar__icons">
+                    <img src="/images/icons/search.png" alt="" className="navbar__icon" />
+                    <img src="/images/icons/gift.png" alt="" className="navbar__icon" />
+                    <img src="/images/icons/notfication.png" alt="" className="navbar__icon" />
+                    <img className="navbar__avatar" src="/images/users/4.png" alt="User Avatar" />
+                    {/* <img src="/images/icons/chevron-down.png" alt="" className="navbar__icon" /> */}
+                </div>
             </div>
         </div>
     )

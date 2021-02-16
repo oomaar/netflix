@@ -30,7 +30,7 @@
 
 .footer__socialIcons {
     display: flex;
-    margin-top: 10px;
+    margin: 10px 0;
 }
 
 .footer__socialImage {

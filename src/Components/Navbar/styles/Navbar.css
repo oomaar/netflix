@@ -54,6 +54,20 @@
     transform: scale(1.1);
 }
 
+.navbar__icons {
+    position: fixed;
+    right: 100px;
+    display: flex;
+    max-width: 100px;
+    width: 100%;
+}
+
+.navbar__icon {
+    width: 20px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
 .navbar__burgerButton {
     width: 30px;
     position: fixed;
