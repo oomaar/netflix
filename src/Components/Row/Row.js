@@ -17,18 +17,25 @@ const Row = ({ title, fetchUrl, isLargeRow = false }) => {
         fetchData();
     }, [fetchUrl]);
 
+    const truncate = (string, n) => string?.length > n ? string.substr(0, n - 1) + '...' : string;
+
+    console.log(movies);
+
     return (
         <div className="row">
             <h1 className="row__title">{title}</h1>
             <div className="row__posters">
                 {movies.map(movie => (
                     ((isLargeRow && movie.poster_path) || (!isLargeRow && movie.poster_path)) && (
-                        <img
-                            key={movie.id}
-                            className={`row__poster ${isLargeRow && "row__posterLarge"}`}
-                            src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path}`}
-                            alt={movie.name}
-                        />
+                        <div key={movie.id} className={`row__posterContainer ${isLargeRow && "row__posterLarge"}`}> 
+                            <img
+                                className={`row__poster ${isLargeRow && "row__posterLarge"}`}
+                                src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path}`}
+                                alt={movie.name}
+                            />
+                            <h1 className="row__posterTitle">{truncate(movie.title, 20)}</h1>
+                            <p className="row__posterYear">({movie.release_date})</p>
+                        </div>
                     )))}
             </div>
         </div>
