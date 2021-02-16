@@ -1,5 +1,5 @@
 import React from 'react';
-import { Banner, Navbar, Row } from '../../Components';
+import { Banner, Footer, Navbar, Row } from '../../Components';
 import requests from '../../helpers/requests';
 import "./styles/HomeScreen.css";
 
@@ -16,6 +16,7 @@ const HomeScreen = () => {
             <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
             <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
             <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
+            <Footer />
         </div>
     )
 };
