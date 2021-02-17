@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import "./styles/Navbar.css";
 
 const Navbar = () => {
     const [show, setShow] = useState(false);
+    const history = useHistory();
 
     const transitionNavbar = () => {
         window.scrollY > 100 ? setShow(true) : setShow(false);
@@ -16,7 +18,7 @@ const Navbar = () => {
     return (
         <div className={`navbar ${show && "navbar__black"}`}>
             <div className="navbar__container">
-                <img className="navbar__logo" src="/images/logo.svg" alt="Netflix Logo" />
+                <img onClick={() => history.push('/')} className="navbar__logo" src="/images/logo.svg" alt="Netflix Logo" />
 
                 <div className="navbar__links">
                     <p>Home</p>
@@ -40,7 +42,7 @@ const Navbar = () => {
                     <img src="/images/icons/search.png" alt="" className="navbar__icon" />
                     <img src="/images/icons/gift.png" alt="" className="navbar__icon" />
                     <img src="/images/icons/notfication.png" alt="" className="navbar__icon" />
-                    <img className="navbar__avatar" src="/images/users/4.png" alt="User Avatar" />
+                    <img onClick={() => history.push('/profile')} className="navbar__avatar" src="/images/users/4.png" alt="User Avatar" />
                     {/* <img src="/images/icons/chevron-down.png" alt="" className="navbar__icon" /> */}
                 </div>
             </div>
