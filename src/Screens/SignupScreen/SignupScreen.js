@@ -1,8 +1,11 @@
 import { useRef } from 'react';
+import { useDispatch } from 'react-redux';
+import { setLogin } from '../../features/loginSlice';
 import { auth } from '../../lib/firebase';
 import "./styles/SignupScreen.css";
 
-const SignUpScreen = ({ setSignIn }) => {
+const SignUpScreen = () => {
+    const dispatch = useDispatch();
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
 
@@ -14,7 +17,7 @@ const SignUpScreen = ({ setSignIn }) => {
             passwordRef.current.value
         )
         .then(authUser => {
-        // console.log("🚀 ~ file: SignupScreen.js ~ line 17 ~ SignUpScreen ~ authUser", authUser);
+        // console.log("🚀 User", authUser);
         })
         .catch(error => alert(error.message));
     };
@@ -26,15 +29,19 @@ const SignUpScreen = ({ setSignIn }) => {
             passwordRef.current.value
         )
         .then(authUser => {
-        // console.log("🚀 ~ file: SignupScreen.js ~ line 28 ~ SignUpScreen ~ authUser", authUser);
+        // console.log("🚀 User", authUser);
         })
         .catch(error => alert(error.message));
     }
 
+    const closeSignup = () => {
+        dispatch(setLogin({ value: false }));
+    };
+
     return (
         <>
             <div className="signup">
-                <img onClick={() => setSignIn(false)} className="signup__closeIcon" src="/images/icons/close-white.png" alt="close" />
+                <img onClick={closeSignup} className="signup__closeIcon" src="/images/icons/close-white.png" alt="close" />
                 <form>
                     <h1>Sign In</h1>
                     <input ref={emailRef} type="email" placeholder="Email Address" />
