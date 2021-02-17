@@ -1,28 +1,94 @@
-.optionForm__input {
-    margin: 20px;
-    border: 2px solid blue;
-}
-
-.optionForm__input > h3 {
+.optionForm > h3 {
     font-size: 1.3rem;
     font-weight: 400;
     margin: 20px;
 }
+.optionForm__input {
+    margin: auto;
+    max-width: 1000px; 
+}
 
-.optionForm__input > form > input {
+.optionForm__inputForm {
+    display: flex;
+    justify-content: center;
+}
+
+.optionForm__inputContainer {
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+}
+
+.optionForm__inputInput {
     padding: 10px;
     outline-width: 0;
-    height: 30px;
-    width: 30%;
+    height: clamp(20px, 5vw, 40px);
+    width: 100%;
     border: 0;
-    max-width: 600px;
+}
+
+.optionForm__input__label {
+    position: absolute;
+    color: gray;
+    left: 0%;
+    top: 20%;
+    height: clamp(20px, 5vw, 40px);
+    width: 25%;
+    width: clamp(50%, 5vw, 25%);
+    pointer-events: none;
+    font-size: clamp(12px, 1vw, 16px);
+}
+
+.optionForm__label__span {
+    transition: all 0.1s ease;
+    position: absolute;
+    left: 7px;
+    top: 0;
+}
+
+.optionForm__inputForm .optionForm__inputInput:focus + .optionForm__input__label .optionForm__label__span {
+    transform: translateY(-70%);
+    font-size: 12px;
+    left: 2px;
+    top: 0;
 }
 
 .optionForm__getStarted {
-    padding: 16px 20px;
-    font-size: 1rem;
+    padding: 15px 20px 20px 20px;
+    font-size: clamp(0.9rem, 2vw, 1.4rem);
+    font-weight: 500;
     color: #fff;
     background-color: #e50914;
     border: 0;
     cursor: pointer;
+    margin-left: 20px;
+}
+
+
+.optionForm__getStarted > img {
+    margin-left: 10px;
+    filter: brightness(0) invert(1);
+    width: clamp(12px, 2vw, 16px);
+}
+
+@media (max-width: 950px) {
+    .optionForm__input {
+        width: 70%;
+    }
+
+    .optionForm__inputForm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .optionForm__inputInput {
+        width: 100%;
+    }
+    
+    .optionForm__getStarted {
+        display: block;
+        margin: 20px auto;
+        padding: 5px 10px 10px 10px;
+    }
 }
