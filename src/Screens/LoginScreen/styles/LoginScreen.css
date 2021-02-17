@@ -56,7 +56,7 @@
 
 .login__body > h1 {
     max-width: 700px;
-    font-size: clamp(2.092rem, 6vw, 4.125rem);
+    font-size: clamp(2.092rem, 6vw, 4rem);
     margin: 0 auto 20px auto;
 }
 
