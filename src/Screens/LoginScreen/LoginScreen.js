@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { SignUpScreen } from '..';
-import { OptionForm } from '../../Components';
+import { OptionForm, Story } from '../../Components';
 import { selectLogin, setLogin } from '../../features/loginSlice';
 import "./styles/LoginScreen.css";
 
@@ -37,15 +37,7 @@ const LoginScreen = () => {
                             <h2>Watch anywhere. Cancel anytime.</h2>
                             
                             <OptionForm />
-                            {/* <div className="login__input">
-                                <form>
-                                    <input
-                                        type="email"
-                                        placeholder="Email Address"
-                                    />
-                                    <button onClick={loginStatus} className="login__getStarted">GET STARTED</button>
-                                </form>
-                            </div> */}
+                            <Story />
                         </>
                     )}
             </div>
