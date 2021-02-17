@@ -66,12 +66,12 @@
     margin-bottom: 30px;
 }
 
-.login__body > h3 {
+/*.login__body > h3 {
     font-size: 1.3rem;
     font-weight: 400;
 }
 
-.login__input {
+ .login__input {
     margin: 20px;
 }
 
@@ -91,4 +91,4 @@
     background-color: #e50914;
     border: 0;
     cursor: pointer;
-}
+} */
