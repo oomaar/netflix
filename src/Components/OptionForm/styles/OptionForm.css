@@ -28,46 +28,45 @@
 }
 
 .optionForm__input__label {
-    position: absolute;
     color: gray;
-    left: 0%;
-    top: 20%;
+    font-size: clamp(12px, 1vw, 16px);
     height: clamp(20px, 5vw, 40px);
-    width: 25%;
     width: clamp(50%, 5vw, 25%);
     pointer-events: none;
-    font-size: clamp(12px, 1vw, 16px);
+    position: absolute;
+    top: 20%;
+    left: 0%;
 }
 
 .optionForm__label__span {
     transition: all 0.1s ease;
     position: absolute;
-    left: 7px;
     top: 0;
+    left: 7px;
 }
 
 .optionForm__inputForm .optionForm__inputInput:focus + .optionForm__input__label .optionForm__label__span {
     transform: translateY(-70%);
     font-size: 12px;
-    left: 2px;
     top: 0;
+    left: 2px;
 }
 
 .optionForm__getStarted {
-    padding: 15px 20px 20px 20px;
-    font-size: clamp(0.9rem, 2vw, 1.4rem);
-    font-weight: 500;
-    color: #fff;
     background-color: #e50914;
     border: 0;
+    color: #fff;
     cursor: pointer;
+    font-size: clamp(0.9rem, 2vw, 1.4rem);
+    font-weight: 500;
     margin-left: 20px;
+    padding: 15px 20px 20px 20px;
 }
 
 
 .optionForm__getStarted > img {
-    margin-left: 10px;
     filter: brightness(0) invert(1);
+    margin-left: 10px;
     width: clamp(12px, 2vw, 16px);
 }
 
@@ -80,10 +79,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-    
-    .optionForm__inputInput {
-        width: 100%;
     }
     
     .optionForm__getStarted {

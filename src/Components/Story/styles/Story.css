@@ -1,6 +1,6 @@
 .story__card {
-    display: flex;
     border-bottom: 8px solid #222;
+    display: flex;
 }
 
 .story__feature {
@@ -71,12 +71,12 @@
 }
 
 .storyTwo__animation {
-    border: 3px solid #333;
     background-color: #000;
+    border: 3px solid #333;
     border-radius: 10px;
-    width: 70%;
-    padding: 10px;
     display: flex;
+    padding: 10px;
+    width: 70%;
     position: absolute;
     top: 60%;
     left: 0;
@@ -97,32 +97,25 @@
 }
 
 .animation__featureTitle {
-    font-size: 16px;
     color: #fff;
+    font-size: 16px;
 }
 
 .animation__featureSubTitle {
-    font-size: 16px;
     color: #0071eb;
+    font-size: 16px;
 }
 
 .animation__feature::after {
+    background: url("story-2.gif") center center no-repeat;
+    background-size: 100%;
+    content: '';
+    display: block;
+    height: 2.988rem;
+    width: 2.988rem;
     position: absolute;
     right: 5%;
     bottom: 20%;
-    /* margin: auto; */
-    width: 3em;
-    height: 3em;
-    outline: 2px solid #000;
-    outline-offset: -2px;
-    display: block;
-    background: 
-    url("story-2.gif")
-    center center 
-    no-repeat;
-    background-size: 100%;
-    content: '';
-    /* border: 4px solid red; */
 }
 
 /* Story 3 */

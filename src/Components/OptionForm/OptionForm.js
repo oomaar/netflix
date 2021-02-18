@@ -36,5 +36,3 @@ const OptionForm = () => {
 };
 
 export default OptionForm;
-
-// onClick={loginStatus}

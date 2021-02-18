@@ -39,6 +39,8 @@ const LoginScreen = () => {
                 </div>
             </div>
             <Story />
+            {/* accordion */}
+            {/* Footer */}
         </>
     )
 };
