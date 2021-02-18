@@ -71,30 +71,3 @@
         padding: 4px 8px;
     }
 }
-
-/*.login__body > h3 {
-    font-size: 1.3rem;
-    font-weight: 400;
-}
-
- .login__input {
-    margin: 20px;
-}
-
-.login__input > form > input {
-    padding: 10px;
-    outline-width: 0;
-    height: 30px;
-    width: 30%;
-    border: 0;
-    max-width: 600px;
-}
-
-.login__getStarted {
-    padding: 16px 20px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #e50914;
-    border: 0;
-    cursor: pointer;
-} */
