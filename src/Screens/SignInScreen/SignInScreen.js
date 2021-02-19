@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { setLogin } from '../../features/loginSlice';
+import { setSignup } from '../../features/signupSlice';
 import { auth } from '../../lib/firebase';
 import "./styles/SignInScreen.css";
 
@@ -10,39 +10,31 @@ const SignInScreen = () => {
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
 
-    const register = e => {
-        e.preventDefault();
-
-        auth.createUserWithEmailAndPassword(
-            emailRef.current.value,
-            passwordRef.current.value
-        )
-            .then(authUser => {
-                // console.log("🚀 User", authUser);
-            })
-            .catch(error => alert(error.message));
-    };
-
     const signIn = e => {
         e.preventDefault();
         auth.signInWithEmailAndPassword(
             emailRef.current.value,
             passwordRef.current.value
         )
-            .then(authUser => {
-                // console.log("🚀 User", authUser);
-            })
+        .then(authUser => {
+            // console.log("🚀 User", authUser);
+        })
             .catch(error => alert(error.message));
     }
 
-    const closeSignup = () => {
+    const closeSignin = () => {
         dispatch(setLogin({ value: false }));
     };
+
+    const signUpNow = () => {
+        dispatch(setSignup({ value: true }));
+        dispatch(setLogin({ value: false }));
+    }
 
     return (
         <div className="signin">
             <div className="signin__container">
-                <img onClick={closeSignup} className="signin__closeIcon" src="/images/icons/close-slim.png" alt="close" />
+                <img onClick={closeSignin} className="signin__closeIcon" src="/images/icons/close-slim.png" alt="close" />
                 <form>
                     <h1>Sign In</h1>
                     <div className="signin__inputContainer">
@@ -60,10 +52,7 @@ const SignInScreen = () => {
                     <button onClick={signIn} type="submit">Sign In</button>
                     <h4>
                         <span className="signin__gray">New To Netflix? </span>
-
-                        <Link className="signin__link" to="/signup">
-                        <span>Sign Up Now.</span>
-                        </Link>
+                        <span className="signin__link" onClick={signUpNow}>Sign Up Now.</span>
                     </h4>
                 </form>
             </div>
@@ -72,5 +61,3 @@ const SignInScreen = () => {
 };
 
 export default SignInScreen;
-
-// onClick={register}

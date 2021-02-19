@@ -13,8 +13,9 @@ const Background = () => {
         <div className="background">
             <div className="background__bg">
                 <Nav />
-                {login ? <SignInScreen /> : <Header />}
-                {signup ? <SignupScreen /> : <Header />}
+                {(!login && !signup) && <Header />}
+                {login && <SignInScreen />}
+                {signup && <SignupScreen />}
             </div>
         </div>
     )
