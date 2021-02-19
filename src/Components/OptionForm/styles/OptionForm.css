@@ -2,6 +2,8 @@
     font-size: 1.3rem;
     font-weight: 400;
     margin: 20px;
+    text-align: center;
+    color: #fff;
 }
 .optionForm__input {
     margin: auto;

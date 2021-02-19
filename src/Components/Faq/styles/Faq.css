@@ -1,0 +1,52 @@
+.faq {
+  width: 70%;
+  margin: auto;
+}
+
+.faq__header {
+  background-color: #303030;
+  color: #fff;
+  cursor: pointer;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  margin: 5px auto;
+  width: 100%;
+}
+
+.faq__title {
+  font-weight: 400;
+  font-size: clamp(18px, 3vw, 26px);
+  text-align: left;
+}
+
+.faq__icon {
+  width: 30px;
+  filter: invert(1);
+  margin-left: auto;
+}
+
+.rotate {
+  transform: rotate(45deg);
+}
+
+.faq__content {
+  color: white;
+  background-color: #303030;
+  overflow: hidden;
+  transition: max-height 0.2s ease;
+}
+
+.faq__text {
+  font-weight: 400;
+  font-size: clamp(18px, 3vw, 26px);
+  padding: 18px;
+}
+
+@media (max-width: 800px) {
+    .faq {
+        width: 100%;
+    }
+}

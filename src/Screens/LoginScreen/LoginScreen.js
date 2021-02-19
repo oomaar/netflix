@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { SignUpScreen } from '..';
-import { Accordion, OptionForm, Story } from '../../Components';
+import { Accordion, Footer, OptionForm, Story } from '../../Components';
 import { selectLogin, setLogin } from '../../features/loginSlice';
 import "./styles/LoginScreen.css";
 
@@ -42,6 +42,7 @@ const LoginScreen = () => {
             {/* accordion */}
             <Accordion />
             {/* Footer */}
+            <Footer />
         </>
     )
 };

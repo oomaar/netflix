@@ -6,3 +6,4 @@ export { default as Footer } from "./Footer/Footer";
 export { default as OptionForm } from "./OptionForm/OptionForm";
 export { default as Story } from "./Story/Story";
 export { default as Accordion } from "./Accordion/Accordion";
+export { default as Faq } from "./Faq/Faq";
