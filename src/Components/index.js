@@ -9,3 +9,4 @@ export { default as Accordion } from "./Accordion/Accordion";
 export { default as Faq } from "./Faq/Faq";
 export { default as Header } from "./Header/Header";
 export { default as Nav } from "./Nav/Nav";
+export { default as Background } from "./Background/Background";
