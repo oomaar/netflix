@@ -1,13 +1,13 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { setLogin } from '../../features/loginSlice';
+import { setSignup } from '../../features/signupSlice';
 import "./styles/OptionForm.css";
 
 const OptionForm = () => {
     const dispatch = useDispatch();
 
-    const loginStatus = () => {
-        dispatch(setLogin({ value: true }));
+    const signupStatus = () => {
+        dispatch(setSignup({ value: true }));
     }
 
     return (
@@ -25,7 +25,7 @@ const OptionForm = () => {
                         </label>
                     </div>
                     
-                    <button onClick={loginStatus} className="optionForm__getStarted">
+                    <button onClick={signupStatus} className="optionForm__getStarted">
                         Get Started
                         <img src="/images/icons/chevron-right.png" alt="" />
                     </button>

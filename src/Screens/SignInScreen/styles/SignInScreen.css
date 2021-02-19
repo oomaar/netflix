@@ -40,15 +40,6 @@
   margin-bottom: 25px;
 }
 
-/* .signin > form > input {
-  outline-width: 0;
-  height: 40px;
-  margin-bottom: 14px;
-  border: 0;
-  border-radius: 5px;
-  padding: 5px 15px;
-} */
-
 .signin__container > form > button {
   padding: 16px 20px;
   font-size: 1rem;
@@ -76,7 +67,6 @@
 }
 
 .signin__inputContainer {
-  /* border: 5px solid red; */
   position: relative;
 }
 
@@ -108,11 +98,7 @@
   left: 7px;
 }
 
-.signin
-  > form
-  .signin__input:focus
-  + .signin__input__label
-  .signin__label__span {
+.signin__container > form .signin__input:focus + .signin__input__label .signin__label__span {
   transform: translateY(-70%);
   font-size: 11px;
   top: 0;

@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { setLogin } from '../../features/loginSlice';
 import { auth } from '../../lib/firebase';
 import "./styles/SignInScreen.css";
@@ -44,27 +45,25 @@ const SignInScreen = () => {
                 <img onClick={closeSignup} className="signin__closeIcon" src="/images/icons/close-slim.png" alt="close" />
                 <form>
                     <h1>Sign In</h1>
-
                     <div className="signin__inputContainer">
                         <input className="signin__input" ref={emailRef} type="email" />
                         <label className="signin__input__label">
                             <span className="signin__label__span">Email address</span>
                         </label>
                     </div>
-
                     <div className="signin__inputContainer">
                         <input className="signin__input" ref={passwordRef} type="password" />
                         <label className="signin__input__label">
                             <span className="signin__label__span">Password</span>
                         </label>
                     </div>
-
-                    {/* <input ref={passwordRef} type="password" placeholder="Password" /> */}
-
                     <button onClick={signIn} type="submit">Sign In</button>
                     <h4>
                         <span className="signin__gray">New To Netflix? </span>
-                        <span className="signin__link" onClick={register}>Sign Up Now.</span>
+
+                        <Link className="signin__link" to="/signup">
+                        <span>Sign Up Now.</span>
+                        </Link>
                     </h4>
                 </form>
             </div>
@@ -74,7 +73,4 @@ const SignInScreen = () => {
 
 export default SignInScreen;
 
-// <input
-// className="optionForm__inputInput"
-// type="email"
-// />
+// onClick={register}
