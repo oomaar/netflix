@@ -2,9 +2,9 @@ import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { setLogin } from '../../features/loginSlice';
 import { auth } from '../../lib/firebase';
-import "./styles/SignupScreen.css";
+import "./styles/SignInScreen.css";
 
-const SignUpScreen = () => {
+const SignInScreen = () => {
     const dispatch = useDispatch();
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
@@ -58,4 +58,4 @@ const SignUpScreen = () => {
     )
 };
 
-export default SignUpScreen;
+export default SignInScreen;
