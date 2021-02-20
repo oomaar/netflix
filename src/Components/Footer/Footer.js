@@ -1,5 +1,8 @@
 import React from 'react';
 import "./styles/Footer.css";
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import FacebookIcon from '@material-ui/icons/Facebook';
 
 const Footer = () => {
     return (
@@ -36,13 +39,13 @@ const Footer = () => {
 
             <div className="footer__socialIcons">
                 <a href="https://github.com/oomaar" className="footer__socialIcon">
-                    <img className="footer__socialImage" src="/images/social/github.png" alt=""/>
+                    <GitHubIcon className="footer__socialImage" />
                 </a>
                 <a href="https://www.linkedin.com/in/omar-hassan-8b1869137" className="footer__socialIcon">
-                    <img className="footer__socialImage" src="/images/social/in.png" alt=""/>
+                    <LinkedInIcon className="footer__socialImage" />
                 </a>
                 <a href="https://www.facebook.com/omarhassan16694" className="footer__socialIcon">
-                    <img className="footer__socialImage" src="/images/social/facebook.png" alt=""/>
+                    <FacebookIcon className="footer__socialImage" />
                 </a>
             </div>
         </div>
